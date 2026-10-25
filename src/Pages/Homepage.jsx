@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../Components/Reveal"; 
 import Page from "../Pages/Page";
 import Porthole from "../Pages/Porthole";
-import { BIZ } from "../Pages/SiteData";
+import { BIZ, SERVICES} from "../Pages/SiteData";
 import "./Homepage.css";
 
 const STRIP = ["Open seven days", "Washers for every load", "Free folding tables", "Step-free entrance", "Bring your own detergent"];

@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import Reveal from "..Components/Reveal"; 
+import Reveal from "../Components/Reveal"; 
 import Page from "../Pages/Page";
 import { SERVICES } from "../Pages/SiteData";
 import "./ServiceDetail.css";
