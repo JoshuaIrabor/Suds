@@ -1,0 +1,66 @@
+/* Home page */
+.mark { color: #101426; background: var(--sun); padding: 0 .18em; border-radius: .18em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hero { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 52rem) { .hero { grid-template-columns: 1.15fr .85fr; } }
+.hero-art { position: relative; display: grid; place-items: center; aspect-ratio: 1; width: min(100%, 26rem); justify-self: center; }
+.hero-art::before { content: ""; position: absolute; inset: 4%; background: var(--sky); border: var(--bw) solid var(--ink);
+  border-radius: 58% 42% 55% 45% / 48% 55% 45% 52%; box-shadow: 8px 8px 0 var(--shadow-c); }
+.porthole { position: relative; width: 74%; }
+.ph-rim { fill: var(--coral); stroke: #101426; stroke-width: 6; }
+.ph-glass { fill: var(--card); stroke: #101426; stroke-width: 5; }
+.ph-wave { fill: none; stroke: var(--blue); stroke-width: 7; stroke-linecap: round; }
+.ph-spin { transform-origin: 100px 100px; }
+.bubble { position: absolute; border-radius: 50%; background: var(--card); border: var(--bw) solid var(--ink); }
+.b1 { width: 3.2rem; height: 3.2rem; top: 4%; right: 8%; }
+.b2 { width: 1.8rem; height: 1.8rem; bottom: 12%; left: 4%; background: var(--lime); }
+.b3 { width: 2.4rem; height: 2.4rem; bottom: 2%; right: 14%; background: var(--sun); }
+@media (prefers-reduced-motion: no-preference) {
+  .ph-spin { animation: spin 10s linear infinite; }
+  .hero-art::before { animation: blob 9s ease-in-out infinite alternate; }
+  .bubble { animation: float 5s ease-in-out infinite alternate; }
+  .b2 { animation-duration: 6.5s; animation-delay: -2s; } .b3 { animation-duration: 4.2s; animation-delay: -1s; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes blob { to { border-radius: 42% 58% 45% 55% / 55% 45% 55% 45%; transform: rotate(6deg); } }
+@keyframes float { to { transform: translateY(-1.1rem); } }
+
+/* Scrolling highlights strip */
+.strip { margin: 3.5rem calc(50% - 50vw); background: var(--ink); color: var(--paper); overflow: hidden; padding: 1rem 0;
+  border-block: var(--bw) solid var(--ink); }
+.strip-track { display: flex; gap: 2.5rem; width: max-content; margin: 0; padding: 0; list-style: none; font-size: 1.4rem; font-weight: 700; }
+.strip-track li { max-width: none; white-space: nowrap; }
+.strip-track li::after { content: "✦" / ""; margin-left: 2.5rem; color: var(--sun); }
+@media (prefers-reduced-motion: no-preference) {
+  .strip-track { animation: marquee 28s linear infinite; }
+  .strip:hover .strip-track { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .strip-track { width: auto; flex-wrap: wrap; justify-content: center; padding: 0 1rem; }
+  .strip-track li[aria-hidden] { display: none; }
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Bento tiles */
+.bento h2 { margin-top: 0; }
+.bento-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 52rem) {
+  .bento-grid { grid-template-columns: repeat(6, 1fr); }
+  .t0, .t1 { grid-column: span 3; } .t2 { grid-column: span 2; } .t3 { grid-column: span 4; }
+}
+.tile { position: relative; padding: 1.75rem; border: var(--bw) solid var(--ink); border-radius: var(--radius);
+  box-shadow: 6px 6px 0 var(--shadow-c); color: var(--on-tile); }
+.tile:hover { translate: -3px -3px; box-shadow: 9px 9px 0 var(--shadow-c); }
+.tile p { margin: 0 0 .75rem; }
+.t0 { background: var(--sky); } .t1 { background: var(--lime); } .t2 { background: var(--coral); }
+.t3 { background: var(--card); color: var(--ink); } .t3:hover { translate: none; box-shadow: 6px 6px 0 var(--shadow-c); }
+.arrow { font-size: 1.8rem; font-weight: 700; }
+.hours { margin: 0 0 1rem; }
+.hours div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1.5rem; padding: .6rem 0; border-bottom: 2px dashed var(--ink); }
+.hours dt { font-weight: 700; } .hours dd { margin: 0; }
+
+/* Call to action */
+.cta { margin-top: 4rem; padding: clamp(1.75rem, 5vw, 3.5rem); background: var(--blue); color: var(--on-blue);
+  border: var(--bw) solid var(--ink); border-radius: 32px; box-shadow: 8px 8px 0 var(--shadow-c); }
+.cta h2 { margin-top: 0; }
+.cta .btn { background: var(--paper); color: var(--ink); }

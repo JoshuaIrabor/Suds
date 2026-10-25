@@ -1,0 +1,9 @@
+/* Single service page */
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0 0 1.5rem; }
+.crumbs li { padding: .2rem 1rem; background: var(--card); border: 2px solid var(--ink); border-radius: 999px; font-weight: 700; }
+.crumbs li + li::before { content: "/" / ""; margin-right: .6rem; opacity: .6; }
+.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 1rem; }
+.steps li { counter-increment: s; position: relative; max-width: none; padding: 1.25rem 1.25rem 1.25rem 4.5rem;
+  background: var(--card); border: var(--bw) solid var(--ink); border-radius: var(--radius); box-shadow: 5px 5px 0 var(--shadow-c); }
+.steps li::before { content: counter(s); position: absolute; left: 1rem; top: 50%; translate: 0 -50%; width: 2.6rem; height: 2.6rem;
+  display: grid; place-items: center; font-weight: 700; color: #101426; background: var(--lime); border: var(--bw) solid #101426; border-radius: 50%; }

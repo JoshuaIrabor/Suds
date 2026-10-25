@@ -1,0 +1,17 @@
+/* Contact page */
+.two-col { display: grid; gap: 2.5rem; }
+@media (min-width: 52rem) { .two-col { grid-template-columns: 1fr 1.2fr; align-items: start; } }
+.two-col > section { padding: clamp(1.25rem, 4vw, 2rem); background: var(--card); border: var(--bw) solid var(--ink);
+  border-radius: var(--radius); box-shadow: 6px 6px 0 var(--shadow-c); }
+.two-col h2 { margin-top: 0; font-size: 1.8rem; }
+address { font-style: normal; line-height: 1.9; }
+.dl div { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.dl dt { font-weight: 700; } .dl dd { margin: 0; }
+.field { margin-bottom: 1.25rem; }
+label { display: block; font-weight: 700; margin-bottom: .35rem; }
+input, textarea { width: 100%; font: inherit; color: var(--ink); background: var(--paper); padding: .85rem 1rem;
+  border: var(--bw) solid var(--ink); border-radius: 16px; }
+input[aria-invalid="true"], textarea[aria-invalid="true"] { border-width: 4px; border-color: var(--err); }
+.err { color: var(--err); font-weight: 700; margin: 0 0 .35rem; }
+.summary { border: 3px solid var(--err); border-radius: 16px; padding: .5rem 1rem; margin-bottom: 1rem; }
+.ok { color: var(--ok); font-weight: 700; border: 3px solid var(--ok); border-radius: 16px; padding: .75rem 1rem; }
