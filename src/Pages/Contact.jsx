@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import Reveal from "../components/Reveal"; 
+import Reveal from "../Components/Reveal"; 
 import Page from "../Pages/Page";
 import { BIZ } from "../Pages/SiteData";
 import "./Contact.css";
